@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+import OffcanvasMenu from "./components/OffcanvasMenu";
 
 function App() {
+  const [offcanvasVisible, setOffcanvasVisible] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <OffcanvasMenu
+        offcanvasVisible={offcanvasVisible}
+        setOffcanvasVisible={setOffcanvasVisible}
+      />
+      <Navbar
+        setOffcanvasVisible={setOffcanvasVisible}
+        offcanvasVisible={offcanvasVisible}
+      />
+      <div className="d-flex">
+        <button
+          className="btn btn-primary ms-auto"
+          type="button"
+          onClick={() => setOffcanvasVisible(!offcanvasVisible)}
         >
-          Learn React
-        </a>
-      </header>
+          {offcanvasVisible ? "true" : "false"}
+        </button>
+      </div>
     </div>
   );
 }
