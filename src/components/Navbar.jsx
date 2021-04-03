@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Navbar({ setOffcanvasVisible, offcanvasVisible }) {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg top-nav-adjust navbar-light bg-light">
       <div className="container-fluid">
         <button
           className="navbar-toggler"
